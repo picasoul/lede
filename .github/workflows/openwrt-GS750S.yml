@@ -7,15 +7,15 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 #
 
-name: OpenWrt-CI
+name: 云编译OPenwrt GL.iNET GS750S固件
 
-#on:
-#  push:
-#    branches: 
+on:
+  push:
+    branches: 
       - master
-  # schedule:
-  #   - cron: 0 20 * * *
-  # release:
+    schedule:
+      - cron: 0 20 * * *
+  #  release:
   #   types: [published]
 
 jobs:
