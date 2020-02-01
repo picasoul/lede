@@ -7,7 +7,7 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 #
 
-name: 云编译OPenwrt GL.iNET GS750S固件
+name: 云编译GL.iNET AR750S固件
 
 on:
   push:
@@ -89,8 +89,8 @@ jobs:
           # 编译GL.INET GS750S固件:
           cat >> .config <<EOF
           CONFIG_TARGET_ath79=y
-          CONFIG_TARGET_ath79_generic=y
-          CONFIG_TARGET_ath79_generic_DEVICE_glinet_gl-x750=y
+          CONFIG_TARGET_ath79_nand=y
+          CONFIG_TARGET_ath79_nand_DEVICE_glinet_gl-ar750s-nor-nand=y
           EOF
           # 固件压缩:
           cat >> .config <<EOF
@@ -99,20 +99,19 @@ jobs:
           # 编译UEFI固件:
           cat >> .config <<EOF
           CONFIG_EFI_IMAGES=y
-          #####
-          CONFIG_TARGET_ROOTFS_EXT4FS=y
-          CONFIG_TARGET_EXT4_RESERVED_PCT=0
-          CONFIG_TARGET_EXT4_BLOCKSIZE_4K=y
-          CONFIG_TARGET_EXT4_BLOCKSIZE=4096
-          CONFIG_TARGET_ROOTFS_SQUASHFS=y
-          CONFIG_TARGET_SQUASHFS_BLOCK_SIZE=256
-          CONFIG_TARGET_UBIFS_FREE_SPACE_FIXUP=y
-          CONFIG_TARGET_UBIFS_JOURNAL_SIZE=""
-          CONFIG_TARGET_IMAGES_GZIP=y
-          CONFIG_TARGET_ROOTFS_PARTSIZE=160
-          ######
           EOF
-          
+        
+          # CONFIG_TARGET_ROOTFS_EXT4FS=y
+          # CONFIG_TARGET_EXT4_RESERVED_PCT=0
+          # CONFIG_TARGET_EXT4_BLOCKSIZE_4K=y
+          # CONFIG_TARGET_EXT4_BLOCKSIZE=4096
+          # CONFIG_TARGET_ROOTFS_SQUASHFS=y
+          # CONFIG_TARGET_SQUASHFS_BLOCK_SIZE=256
+          # CONFIG_TARGET_UBIFS_FREE_SPACE_FIXUP=y
+          # CONFIG_TARGET_UBIFS_JOURNAL_SIZE=""
+          # CONFIG_TARGET_IMAGES_GZIP=y
+          # CONFIG_TARGET_ROOTFS_PARTSIZE=160
+                          
           
           # IPv6支持:
           cat >> .config <<EOF
