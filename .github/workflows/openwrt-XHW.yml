@@ -7,7 +7,7 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 #
 
-name: OpenWrt-NANOPI
+name: OpenWrt-NANOPI R1
 
 on:
   push:
@@ -98,8 +98,8 @@ jobs:
 
           # 编译x64固件:
           cat >> .config <<EOF
+          CONFIG_TARGET_sunxi=y
           CONFIG_TARGET_sunxi_cortexa7=y
-          CONFIG_TARGET_sunxi_cortexa7_Default=y
           CONFIG_TARGET_sunxi_cortexa7_DEVICE_sun8i-h3-nanopi-m1-plus=y
           EOF
 
