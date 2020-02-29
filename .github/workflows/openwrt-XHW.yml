@@ -9,12 +9,12 @@
 
 name: OpenWrt-NANOPI R1 V3
 
-on:
-  push:
-    branches: 
-      - master
-  schedule:
-    - cron: 0 20 * * *
+#on:
+ # push:
+   # branches: 
+ #     - master
+ # schedule:
+ #   - cron: 0 20 * * *
   # release:
   #   types: [published]
 
